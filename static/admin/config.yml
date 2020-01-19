@@ -1,5 +1,6 @@
 backend:
-  name: test-repo
+  name: github
+  repo: chadwilken/Blog
 
 media_folder: static/assets
 public_folder: assets

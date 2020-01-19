@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-personal-starter-blog",
+  "name": "chadwilken-blog",
   "private": true,
   "description": "A personal blog starter for a blog powered by Netlify CMS, based on the default blog starter",
   "version": "1.0.0",
-  "author": "Thomas Wang <thomas@wang.sh>",
+  "author": "Chad Wilken <chad.wilken@gmail.com>",
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
@@ -45,7 +45,7 @@
   "devDependencies": {
     "prettier": "^1.17.0"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/chadwilken/Blog#readme",
   "keywords": [
     "gatsby"
   ],
@@ -53,7 +53,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/chadwilken/Blog.git"
   },
   "scripts": {
     "build": "gatsby build",
