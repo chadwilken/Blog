@@ -4,7 +4,7 @@ module.exports = {
     title: `Ramblin's on Code`,
     author: `Chad Wilken`,
     description: `A discussion of software development`,
-    siteUrl: `https://chadwilken.com  /`,
+    siteUrl: `https://chadwilken.com/`,
     social: {
       twitter: `chadwilken`,
     },
