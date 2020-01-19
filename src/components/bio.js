@@ -34,12 +34,10 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things.
-              {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                You should follow him on Twitter
-              </a>
+              Hey 👋, I'm Chad Wilken. I am a developer primarily focused on
+              Ruby and React. These are some posts about things I have learned
+              while being the CTO at{" "}
+              <a href="https://companycam.com">CompanyCam</a>.
             </p>
           </Container>
         )

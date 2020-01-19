@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     // edit below
-    title: `Ramblin's on Code`,
+    title: `Code Ramblin's`,
     author: `Chad Wilken`,
     description: `A discussion of software development`,
     siteUrl: `https://chadwilken.com/`,
