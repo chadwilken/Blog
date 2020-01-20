@@ -108,7 +108,8 @@ end
 Since Wisper already parses the data and calls the method with the same name as the event, the `BaseConsumer` class could be deleted. The only thing required to hook up the events to the corresponding consumer was to create an initializer:
 
 ```ruby
-# wisper.rbWisper.subscribe(
+# wisper.rb
+Wisper.subscribe(
   AssetListener,
   broadcaster: :sidekiq,
   on: [
