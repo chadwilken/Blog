@@ -26,11 +26,7 @@ In case you aren’t familiar with React Native some benefits include:
 
 To test how easy it was to integrate we decided to rewrite our login screen in React Native. The screen is fairly simple and looks like:
 
-<figure>
-
 ![screenshot](/assets/78e3dcfa-d124-4e0d-b04a-d669f60ec4aa.jpeg)
-
-</figure>
 
 The trick with this is that for now we wanted to keep using our API helper to make the HTTP requests. To make that function we added:
 
@@ -50,10 +46,8 @@ This will allow you to do whatever you need on the main thread. Calling this met
 submitForm = () => {
   // Get the class you exposed with RCT_EXPORT_MODULE();
   var LoginViewController = NativeModules.LoginViewController;
-```
-
-```javascript
- // Method are changed to parameters for the JS function
+ 
+  // Method are changed to parameters for the JS function
   LoginViewController.startLoginWithUsername(this.state.email, this.state.password, function() {
      console.log(‘Login Failed’);
    });
