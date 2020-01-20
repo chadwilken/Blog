@@ -1,10 +1,12 @@
 ---
 path: dipping-your-toes-into-react-native
 date: 2016-04-15T18:24:56.570Z
-title: "Dipping Your Toes into React Native"
-description: "When I took over as CTO at CompanyCam we had a universal app written in Xamarin that was horrendous. My first call was to rewrite both apps natively for Android and iOS using Java and…"
+title: Dipping Your Toes into React Native
+description: >-
+  When I took over as CTO at CompanyCam we had a universal app written in
+  Xamarin that was horrendous. My first call was to rewrite both apps natively
+  for Android and iOS using Java and…
 ---
-
 When I took over as CTO at CompanyCam we had a universal app written in Xamarin that was horrendous. My first call was to rewrite both apps natively for Android and iOS using Java and Objective-C/Swift respectively. Upon completion the performance of the apps improved and the bugs decreased significantly.
 
 A constant problem as a small startup is that you are always short on developers. In our case this meant our apps varied in the features they provided. On top of handling our webapp, I also write our iOS app, which for our users means that Android gets features late if at all.
@@ -13,12 +15,12 @@ A constant problem as a small startup is that you are always short on developers
 
 In case you aren’t familiar with React Native some benefits include:
 
-- The node/npm ecosystem: Use packages provided by npm allowing you to write less code. This also allows you to write your own packages for use across iOS/Android.
-- Hot Reloading: As soon as you save your file it reloads on the device; in most cases it preserves your spot and state in the app.
-- Flexbox: Let your designers do their thing and style the app using technologies they are already familiar with. The flexbox model is a little different but Jared, our designer, figured it out in 10 minutes.
-- Chrome Debug Tool: You can debug your code and log to the console from within your JS.
-- Easy of Integration: It is almost too easy integrating it with an existing app. Add `RCT_EXPORT_MODULE();` to the file and expose methods you would like to call from JS with `RCT_EXPORT_METHOD`.
-- It’s just JavaScript: If you have team members familiar with JavaScript they can start to contribute to iOS and Android. Granted some parts require some knowledge of the platform, but in general they don’t.
+* The node/npm ecosystem: Use packages provided by npm allowing you to write less code. This also allows you to write your own packages for use across iOS/Android.
+* Hot Reloading: As soon as you save your file it reloads on the device; in most cases it preserves your spot and state in the app.
+* Flexbox: Let your designers do their thing and style the app using technologies they are already familiar with. The flexbox model is a little different but Jared, our designer, figured it out in 10 minutes.
+* Chrome Debug Tool: You can debug your code and log to the console from within your JS.
+* Easy of Integration: It is almost too easy integrating it with an existing app. Add `RCT_EXPORT_MODULE();` to the file and expose methods you would like to call from JS with `RCT_EXPORT_METHOD`.
+* It’s just JavaScript: If you have team members familiar with JavaScript they can start to contribute to iOS and Android. Granted some parts require some knowledge of the platform, but in general they don’t.
 
 ## Testing the Waters
 
@@ -26,7 +28,7 @@ To test how easy it was to integrate we decided to rewrite our login screen in R
 
 <figure>
 
-![screenshot](/assets/dipping-your-toes-into-react-native/screenshot.jpeg)
+![screenshot](/assets/78e3dcfa-d124-4e0d-b04a-d669f60ec4aa.jpeg)
 
 </figure>
 
