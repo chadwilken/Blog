@@ -1,10 +1,12 @@
 ---
 path: speedy-json-endpoints-with-rails
 date: 2017-07-26T16:05:15.824Z
-title: "Speedy JSON Endpoints with Rails"
-description: "CompanyCam is a service to store photos by projects for contractors and other industries that work at a lot of different places. Our goal is to provide as much information as possible to our users…"
+title: Speedy JSON Endpoints with Rails
+description: >-
+  CompanyCam is a service to store photos by projects for contractors and other
+  industries that work at a lot of different places. Our goal is to provide as
+  much information as possible to our users…
 ---
-
 CompanyCam is a service to store photos by projects for contractors and other industries that work at a lot of different places. Our goal is to provide as much information as possible to our users at a glance. This often means pulling in information from multiple models, potentially filtered based on the current user’s permissions or settings.
 
 When most people think of the performance issues of a large object graph, they think about the cost to query the information out of the database. They pay special attention to avoid things like n+1 queries or loading too much information, which can slow the app to a halt. Yes, this is useful, but in our case, that wasn’t the bottleneck — our issue was Active Model Serializers which had mediocre caching and wouldn’t use the eagerly loaded associations.
@@ -15,11 +17,7 @@ In this post I will discuss our decision to move from Active Model Serializers t
 
 Let’s get a better understanding of the object graph and why some things were so slow when using AMS. Take a look at the main screen of our mobile app.
 
-<figure>
-
-![](/assets/speedy-json-endpoints-with-rails/screentshot.jpeg)
-
-<figcaption>Project Feed Cards</figcaption></figure>
+![Project Feed Cards](/assets/d6b85693-65ee-4eff-ac5d-d815f93c959c.jpeg "Project Feed Cards")
 
 In case it isn’t apparent at first glance, we are pulling in the project name, number of photos at the project, the 6 most recent photos at the project, who took the last photo, and on some screens we show how many photos have been taken that day. Then repeat that 50 times (one for each card in the page of projects). The query was difficult to get optimized (we can save that for another post), but the serialization was still taking an average of 500–700ms and some all the way up to 2,500ms. Using [Scout](http://scoutapp.com/) we were able to see that this was because Active Model Serializers was causing a n+1 query when rendering instead of using the eager loaded associations.
 
@@ -35,7 +33,7 @@ The beauty of this is that you are simply constructing and returning an object t
 
 ## So What’s the Result?
 
-With these few simple changes we were able to reduce our average request time for the controller from 500ms to just _50ms!_ That is _10x_ faster and only took 30 minutes to implement*.* Needless to say, I am extremely pleased with these results. Not to mention the reduced load on the database is a free bonus.
+With these few simple changes we were able to reduce our average request time for the controller from 500ms to just _50ms!_ That is _10x_ faster and only took 30 minutes to implement_._ Needless to say, I am extremely pleased with these results. Not to mention the reduced load on the database is a free bonus.
 
 ## Where to Now?
 
