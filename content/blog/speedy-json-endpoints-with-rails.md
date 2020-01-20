@@ -25,9 +25,9 @@ I did a bit of research and stumbled on a issue thread on GitHub where user’s 
 
 ## How It Works
 
-The gem adds itself as a render handler so that it will check in the directory matching the controller path with the `json.jb` extension. If you want to render a template that doesn’t follow the Rails lookup default you can specify `render ‘path/to/your/template.json.jb` To start, let’s look at our `index.json.jb` template to see how we get render a collection of projects.
+The gem adds itself as a render handler so that it will check in the directory matching the controller path with the `json.jb` extension. If you want to render a template that doesn’t follow the Rails lookup default you can specify `render ’path/to/your/template.json.jb’` To start, let’s look at our `index.json.jb` template to see how we get render a collection of projects.
 
-We simply call `map` on projects, which means that this view will return an Array of projects. For each project we first check to see if it has a cached version we can load to avoid unnecessary rendering. You will notice we are adding ‘v1’, ‘recent’, and then whether or not the user can see all users photos (a permission) to the cache key so that this project is used only in this context since the contents are unique. Then for each project we render the `project` partial. Notice we are following the Russian doll caching method.
+We simply call `map` on projects, which means that this view will return an Array of projects. For each project we first check to see if it has a cached version we can load to avoid unnecessary rendering. You will notice we are adding ’v1’, ‘recent’, and then whether or not the user can see all users photos (a permission) to the cache key so that this project is used only in this context since the contents are unique. Then for each project we render the `project` partial. Notice we are following the Russian doll caching method.
 
 The beauty of this is that you are simply constructing and returning an object that can be used as valid JSON, in our case this is a Hash. This gives you nearly unlimited freedom on how you construct your JSON object.
 
