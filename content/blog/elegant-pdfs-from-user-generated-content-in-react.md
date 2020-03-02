@@ -1,16 +1,16 @@
 ---
 path: react-pdf-w-user-generated-content
 date: 2020-03-02T18:21:31.257Z
-title: Elegant PDFs from User Generated Content in React
+title: Elegant PDFs from User-Generated Content in React
 description: >-
   Learn how to use DraftJS, Redraft, and React PDF to generate elegant PDFs with
-  user generated content.
+  user-generated content.
 ---
 Converting user generated HTML into a PDF has always been a pain. You’re stuck with solutions like [wkhtmltopdf](https://wkhtmltopdf.org/), [PhantomJS](https://coderwall.com/p/5vmo1g/use-phantomjs-to-create-pdfs-from-html), or [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome#create_a_pdf_dom). The problem I have found with all of these tools is that they are either slow, fail to match styles, or require running on a server. At CompanyCam we allow our users to generate reports, some of which are hundreds of pages long. No matter how you slice it, that makes any of the options above much more difficult, especially if you allow the user to preview their PDF.
 
-In this post we will look at how we use a combination of React PDF, DraftJS, and Redraft to craft a PDF from user generated content that is instantly available in the users browser for preview and download.
+In this post we will look at how we use a combination of React PDF, DraftJS, and Redraft to craft a PDF from user-generated content that is instantly available in the user's browser for preview and download.
 
-We allow users to build reports using photos they captured in CompanyCam. They can add comments using a WYSIWYG editor and choose if they want to show any metadata such as the capture time, who took the photo the project the photo belongs to.
+We allow users to build reports using photos they captured in CompanyCam. They can add comments using a WYSIWYG editor and choose if they want to show any metadata such as the capture time, who took the photo, and the project the photo belongs to.
 
 ## The Flow
 When the user selects to generate a PDF of the report they are viewing we open a modal and finish fetching all of the pages of entries if necessary. Once we have all of the data we can get down to work. We pass the report to our `PDF` component, which is responsible for bootstrapping some libraries, generating a PDF and converting it to a blob, and then rendering the preview.
@@ -180,7 +180,7 @@ const Document = ({ report }) => {
 export default Document;
 ```
 
-The wrapping component is the `Document` component imported from `@react-pdf`, this is important because it can be rendered by the `pdf` function in our `PDF` component. The `Page`, `CoverPage` and `PageFooter` are all self explanatory so I won’t show the code. It renders a page at the beginning of the document with the companies name and title of the report. We then render an `Entry` for each item in the report. The interesting part here is that we wrap all entries in a single `Page` component. React PDF has a pretty advanced wrapping engine and also allows passing a `break` prop to add a page break before the component it is rendering.
+The wrapping component is the `Document` component imported from `@react-pdf`; this is important because it can be rendered by the `pdf` function in our `PDF` component. The `Page`, `CoverPage` and `PageFooter` are all self explanatory so I won’t show the code. It renders a page at the beginning of the document with the company's name and title of the report. We then render an `Entry` for each item in the report. The interesting part here is that we wrap all entries in a single `Page` component. React PDF has a pretty advanced wrapping engine and also allows passing a `break` prop to add a page break before the component it is rendering.
 
 I am also going to omit the `Entry` component as well. It returns a `View` component that represents an item in the report. The only interesting part is that it renders a `RichText` component, and this is where the magic happens.
 
@@ -212,7 +212,7 @@ const RichText = ({ note }) => {
 export default RichText;
 ```
 
-The component is quite simple, it handles converting the HTML to a format that is understood by DraftJS using `convertFromHTML`. 
+The component is quite simple; it handles converting the HTML to a format that is understood by DraftJS using `convertFromHTML`. 
 > If you’re using DraftJS to generate the HTML, you can store the raw JS object from Draft using `convertToRaw` while editing.
 
 Once we have converted the HTML into _blocks_, we initialize a `ContentState` and an `EditorState`. We do all of that to finally get the `rawContent`. The raw content is a regular ole’ JS object and is understandable if you log it to the console. Finally we’re at the cool part, we return the result of calling `redraft` with the `rawContent`, `renderers`, and some options.
@@ -302,7 +302,7 @@ const renderers = {
 };
 ```
 
-As you can see we return a text element for all of the `inline` styles that applies the corresponding styles to make it match the type. For each of the `block`’s we created our own components that have applied styles to match the formatting required. For example, here is `HeaderOne`:
+As you can see we return a text element for all of the `inline` styles that applies the corresponding styles to make it match the type. For each of the blocks we created our own components that have applied styles to match the formatting required. For example, here is `HeaderOne`:
 ```
 const styles = StyleSheet.create({
   headingOne: {
