@@ -6,7 +6,7 @@ description: >-
   Learn how to use DraftJS, Redraft, and React PDF to generate elegant PDFs with
   user generated content.
 ---
-Converting user generate HTML into a PDF has always been a pain. You’re stuck with solutions like [wkhtmltopdf](https://wkhtmltopdf.org/), [PhantomJS](https://coderwall.com/p/5vmo1g/use-phantomjs-to-create-pdfs-from-html), or [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome#create_a_pdf_dom). The problem I have found with all of these tools is that they are either slow, fail to match styles, or require running on a server. At CompayCam we allow our users to generate reports, some of which are hundreds of pages long. No matter how you slice it, that makes any of the options above much more difficult, especially if you allow the user to preview their PDF.
+Converting user generated HTML into a PDF has always been a pain. You’re stuck with solutions like [wkhtmltopdf](https://wkhtmltopdf.org/), [PhantomJS](https://coderwall.com/p/5vmo1g/use-phantomjs-to-create-pdfs-from-html), or [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome#create_a_pdf_dom). The problem I have found with all of these tools is that they are either slow, fail to match styles, or require running on a server. At CompanyCam we allow our users to generate reports, some of which are hundreds of pages long. No matter how you slice it, that makes any of the options above much more difficult, especially if you allow the user to preview their PDF.
 
 In this post we will look at how we use a combination of React PDF, DraftJS, and Redraft to craft a PDF from user generated content that is instantly available in the users browser for preview and download.
 
