@@ -10,7 +10,7 @@ Converting user generated HTML into a PDF has always been a pain. You’re stuck
 
 In this post we will look at how we use a combination of React PDF, DraftJS, and Redraft to craft a PDF from user-generated content that is instantly available in the user's browser for preview and download.
 
-Since we use several libraries I think it may be helpful give a quick overview and what each library is used for.
+Since we use several libraries I think it may be helpful to give a quick overview and what each library is used for.
 
 ### React PDF
 [React PDF](https://react-pdf.org/) is a PDF renderer built for React. It includes several components that represent different aspects of a PDF document such as a `Document`, `Page`, and `View`. It can output to a file on the server or a `Blob`  in the browser. It provides an interface for layout, styling, and asset fetching.
